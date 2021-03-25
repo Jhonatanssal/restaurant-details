@@ -21,7 +21,7 @@ module Api
       end
 
       def show
-        restaurant = Restaurant.find(params[:id])
+        restaurant = Restaurant.find_by(url: params[:url])
 
         render json: serialized_options(restaurant, options)
       end
@@ -37,7 +37,7 @@ module Api
       end
 
       def update
-        restaurant = Restaurant.find(params[:id])
+        restaurant = Restaurant.find_by(url: params[:url])
 
         if restaurant.update(restaurant_params)
           render json: serialized_options(restaurants, options)
@@ -47,7 +47,7 @@ module Api
       end
 
       def destroy
-        restaurant = Restaurant.find(params[:id])
+        restaurant = Restaurant.find_by(url: params[:url])
 
         if restaurant.destroy
           head :no_content
