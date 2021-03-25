@@ -12,6 +12,7 @@ export default function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Restaurants} />
+        <Route exact path="/restaurants" component={Restaurants} />
         <Route exact path="/restaurants/:url" component={Restaurant} />
         <Route exact path="/new-restaurant" component={NewRestaurant} />
       </Switch>

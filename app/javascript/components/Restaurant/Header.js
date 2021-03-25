@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from 'images/logo.png'
+import logo1 from 'images/logo.png'
 
 export default function Header(props) {
   const { name, description, score } = props.attributes;
@@ -10,7 +10,7 @@ export default function Header(props) {
       <div className="header d-md-flex justify-content-between align-items-center mt-2 p-3">
         <div className="d-md-flex align-items-center">
           <span className="logo">
-            <img className="restaurant-logo mr-3" src={logo} alt="Logo" />
+            <img className="restaurant-logo mr-3" src={logo1} alt="Logo" />
           </span>
           <span>
             <h2>{name}</h2>
