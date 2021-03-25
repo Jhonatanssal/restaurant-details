@@ -11,7 +11,7 @@ module Api
 
       # ---------------------------- CRUD Methods -----------------------------
       def create
-        review = Review.new(review_params)
+        review = restaurant.reviews.new(review_params)
 
         if review.save
           render json: serialized(review)
@@ -34,11 +34,15 @@ module Api
 
       def review_params
         params.require(:review).permit(
-          :user_id,
+          :user_name,
           :restaurant_id,
           :description,
           :score
         )
+      end
+
+      def restaurant
+        @restaurant = Restaurant.find(params[:restaurant_id])
       end
 
     end
