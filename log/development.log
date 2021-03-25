@@ -36133,3 +36133,781 @@ Processing by Api::V1::RestaurantsController#show as HTML
 Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.9ms | Allocations: 7893)
 
 
+Started GET "/restaurants/restaurant-test" for ::1 at 2021-03-25 13:32:42 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"restaurants/restaurant-test"}
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 205)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 6841)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 9239)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: bootstrap/scss/bootstrap.
+        on line 1:1 of app/assets/stylesheets/application.scss
+>> @import "bootstrap/scss/bootstrap";
+
+   ^
+):
+     6:     <%= csrf_meta_tags %>
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    10:     <%= javascript_pack_tag 'application' %>
+    11:     <%= javascript_pack_tag 'index' %>
+    12:   </head>
+  
+app/assets/stylesheets/application.scss:1
+app/views/layouts/application.html.erb:9
+Started GET "/restaurants/restaurant-test" for ::1 at 2021-03-25 13:33:32 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"restaurants/restaurant-test"}
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 205)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/dtechnologies/Desktop/restaurant-details/public/packs
+[Webpacker] Hash: c28f327e933efe94c9a8
+Version: webpack 4.46.0
+Time: 9807ms
+Built at: 03/25/2021 1:33:43 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-32ac5248bb3146a56222.js    612 KiB  application  [emitted] [immutable]  application
+js/application-32ac5248bb3146a56222.js.map    718 KiB  application  [emitted] [dev]        application
+          js/index-b31499e05ea9a89fc708.js   2.03 MiB        index  [emitted] [immutable]  index
+      js/index-b31499e05ea9a89fc708.js.map   2.18 MiB        index  [emitted] [dev]        index
+                             manifest.json  729 bytes               [emitted]              
+            media/images/logo-a4378186.png   11.5 KiB               [emitted]              
+Entrypoint application = js/application-32ac5248bb3146a56222.js js/application-32ac5248bb3146a56222.js.map
+Entrypoint index = js/index-b31499e05ea9a89fc708.js js/index-b31499e05ea9a89fc708.js.map
+[./app/assets/images/logo.png] 76 bytes {index} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 518 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.35 KiB {index} [built]
+[./node_modules/moment/locale sync recursive ^\.\/.*$] ./node_modules/moment/locale sync ^\.\/.*$ 3.21 KiB {index} [optional] [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {index} [built]
+    + 210 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11223.8ms | Allocations: 93117)
+Completed 200 OK in 11228ms (Views: 11225.6ms | ActiveRecord: 0.0ms | Allocations: 95547)
+
+
+Started GET "/api/v1/restaurants/restaurant-test" for ::1 at 2021-03-25 13:33:43 -0500
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"url"=>"restaurant-test"}
+  [1m[36mRestaurant Load (1.9ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."url" = $1 LIMIT $2[0m  [["url", "restaurant-test"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:24:in `show'
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 19]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 19]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 19]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+Completed 200 OK in 74ms (Views: 0.1ms | ActiveRecord: 21.4ms | Allocations: 15792)
+
+
+Started GET "/restaurants" for ::1 at 2021-03-25 13:34:14 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"restaurants"}
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/dtechnologies/Desktop/restaurant-details/public/packs
+[Webpacker] Hash: 334b66df40beecf9b886
+Version: webpack 4.46.0
+Time: 2086ms
+Built at: 03/25/2021 1:34:17 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-32ac5248bb3146a56222.js    612 KiB  application  [emitted] [immutable]  application
+js/application-32ac5248bb3146a56222.js.map    718 KiB  application  [emitted] [dev]        application
+          js/index-35ec08c2767fd9c416ae.js   2.03 MiB        index  [emitted] [immutable]  index
+      js/index-35ec08c2767fd9c416ae.js.map   2.18 MiB        index  [emitted] [dev]        index
+                             manifest.json  729 bytes               [emitted]              
+            media/images/logo-a4378186.png   11.5 KiB               [emitted]              
+Entrypoint application = js/application-32ac5248bb3146a56222.js js/application-32ac5248bb3146a56222.js.map
+Entrypoint index = js/index-35ec08c2767fd9c416ae.js js/index-35ec08c2767fd9c416ae.js.map
+[./app/assets/images/logo.png] 76 bytes {index} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 518 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.35 KiB {index} [built]
+[./node_modules/moment/locale sync recursive ^\.\/.*$] ./node_modules/moment/locale sync ^\.\/.*$ 3.21 KiB {index} [optional] [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {index} [built]
+    + 210 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2931.7ms | Allocations: 10359)
+Completed 200 OK in 2933ms (Views: 2932.3ms | ActiveRecord: 0.0ms | Allocations: 10616)
+
+
+Started GET "/api/v1/restaurants.json" for ::1 at 2021-03-25 13:34:17 -0500
+Processing by Api::V1::RestaurantsController#index as JSON
+  [1m[36mRestaurant Load (2.0ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (1.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (1.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 6]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 6]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 6]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (3.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 6]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 7]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 8]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 8]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 8]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 9]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 9]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 9]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 10]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 10]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 10]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 11]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 11]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 11]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 12]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 12]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 12]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 18]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 18]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 18]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 19]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 19]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 19]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 20]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 20]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 20]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 21]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 21]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 21]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 22]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 22]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 22]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 23]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 23]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 23]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+Completed 200 OK in 213ms (Views: 0.1ms | ActiveRecord: 75.1ms | Allocations: 59867)
+
+
+Started GET "/api/v1/restaurants.json" for ::1 at 2021-03-25 13:34:17 -0500
+Processing by Api::V1::RestaurantsController#index as JSON
+  [1m[36mRestaurant Load (0.9ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 6]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 6]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 6]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 6]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 7]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 8]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 8]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 8]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 9]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 9]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 9]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 10]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 10]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 10]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 11]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 11]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 11]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 12]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 12]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 12]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 18]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 18]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 18]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 19]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 19]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 19]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 20]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 20]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 20]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 21]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 21]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 21]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 22]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 22]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 22]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 23]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 23]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 23]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+Completed 200 OK in 130ms (Views: 0.1ms | ActiveRecord: 52.3ms | Allocations: 50119)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (30.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "restaurant_details_development"[0m
+  [1m[35m (18.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "restaurant_details_test"[0m
+  [1m[35m (95.4ms)[0m  [1m[35mCREATE DATABASE "restaurant_details_development" ENCODING = 'unicode'[0m
+  [1m[35m (41.7ms)[0m  [1m[35mCREATE DATABASE "restaurant_details_test" ENCODING = 'unicode'[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1595903918944223175)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRestaurants (20210324022319)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210324022319"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReviews (20210324040240)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "user_id" integer, "restaurant_id" integer, "description" text, "score" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210324040240"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUrlToRestaurants (20210324053049)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "restaurants" ADD "url" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210324053049"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeUserIdToUserName (20210325024735)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "reviews" RENAME COLUMN "user_id" TO "user_name"[0m
+  [1m[35m (7.1ms)[0m  [1m[35mALTER TABLE "reviews" ALTER COLUMN "user_name" TYPE character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210325024735"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-03-25 18:38:04.184389"], ["updated_at", "2021-03-25 18:38:04.184389"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1595903918944223175)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (0.7ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Restaurant 1"], ["description", "This is the Restaurant number 1"], ["created_at", "2021-03-25 18:38:11.179867"], ["updated_at", "2021-03-25 18:38:11.179867"], ["url", "restaurant-1"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Restaurant 2"], ["description", "This is the Restaurant number 2"], ["created_at", "2021-03-25 18:38:11.252554"], ["updated_at", "2021-03-25 18:38:11.252554"], ["url", "restaurant-2"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Restaurant 3"], ["description", "This is the Restaurant number 3"], ["created_at", "2021-03-25 18:38:11.256926"], ["updated_at", "2021-03-25 18:38:11.256926"], ["url", "restaurant-3"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Restaurant 4"], ["description", "This is the Restaurant number 4"], ["created_at", "2021-03-25 18:38:11.261022"], ["updated_at", "2021-03-25 18:38:11.261022"], ["url", "restaurant-4"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Restaurant 5"], ["description", "This is the Restaurant number 5"], ["created_at", "2021-03-25 18:38:11.265034"], ["updated_at", "2021-03-25 18:38:11.265034"], ["url", "restaurant-5"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Restaurant 6"], ["description", "This is the Restaurant number 6"], ["created_at", "2021-03-25 18:38:11.268925"], ["updated_at", "2021-03-25 18:38:11.268925"], ["url", "restaurant-6"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Restaurant 7"], ["description", "This is the Restaurant number 7"], ["created_at", "2021-03-25 18:38:11.272980"], ["updated_at", "2021-03-25 18:38:11.272980"], ["url", "restaurant-7"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Restaurant 8"], ["description", "This is the Restaurant number 8"], ["created_at", "2021-03-25 18:38:11.276950"], ["updated_at", "2021-03-25 18:38:11.276950"], ["url", "restaurant-8"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Restaurant 9"], ["description", "This is the Restaurant number 9"], ["created_at", "2021-03-25 18:38:11.280999"], ["updated_at", "2021-03-25 18:38:11.280999"], ["url", "restaurant-9"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Restaurant 10"], ["description", "This is the Restaurant number 10"], ["created_at", "2021-03-25 18:38:11.285173"], ["updated_at", "2021-03-25 18:38:11.285173"], ["url", "restaurant-10"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Restaurant 11"], ["description", "This is the Restaurant number 11"], ["created_at", "2021-03-25 18:38:11.289542"], ["updated_at", "2021-03-25 18:38:11.289542"], ["url", "restaurant-11"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Restaurant 12"], ["description", "This is the Restaurant number 12"], ["created_at", "2021-03-25 18:38:11.293831"], ["updated_at", "2021-03-25 18:38:11.293831"], ["url", "restaurant-12"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (0.6ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 1"], ["restaurant_id", 2], ["description", "This is the review number 1"], ["score", 1], ["created_at", "2021-03-25 18:38:11.311698"], ["updated_at", "2021-03-25 18:38:11.311698"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 2"], ["restaurant_id", 3], ["description", "This is the review number 2"], ["score", 4], ["created_at", "2021-03-25 18:38:11.317786"], ["updated_at", "2021-03-25 18:38:11.317786"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 3"], ["restaurant_id", 1], ["description", "This is the review number 3"], ["score", 2], ["created_at", "2021-03-25 18:38:11.323697"], ["updated_at", "2021-03-25 18:38:11.323697"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 4"], ["restaurant_id", 5], ["description", "This is the review number 4"], ["score", 4], ["created_at", "2021-03-25 18:38:11.329626"], ["updated_at", "2021-03-25 18:38:11.329626"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 5"], ["restaurant_id", 5], ["description", "This is the review number 5"], ["score", 2], ["created_at", "2021-03-25 18:38:11.335474"], ["updated_at", "2021-03-25 18:38:11.335474"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mReview Create (0.6ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 6"], ["restaurant_id", 11], ["description", "This is the review number 6"], ["score", 4], ["created_at", "2021-03-25 18:38:11.346768"], ["updated_at", "2021-03-25 18:38:11.346768"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 7"], ["restaurant_id", 9], ["description", "This is the review number 7"], ["score", 5], ["created_at", "2021-03-25 18:38:11.353146"], ["updated_at", "2021-03-25 18:38:11.353146"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 8"], ["restaurant_id", 7], ["description", "This is the review number 8"], ["score", 5], ["created_at", "2021-03-25 18:38:11.359179"], ["updated_at", "2021-03-25 18:38:11.359179"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 9"], ["restaurant_id", 5], ["description", "This is the review number 9"], ["score", 3], ["created_at", "2021-03-25 18:38:11.365527"], ["updated_at", "2021-03-25 18:38:11.365527"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mReview Create (0.6ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 10"], ["restaurant_id", 12], ["description", "This is the review number 10"], ["score", 5], ["created_at", "2021-03-25 18:38:11.371176"], ["updated_at", "2021-03-25 18:38:11.371176"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 11"], ["restaurant_id", 7], ["description", "This is the review number 11"], ["score", 1], ["created_at", "2021-03-25 18:38:11.377270"], ["updated_at", "2021-03-25 18:38:11.377270"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 12"], ["restaurant_id", 4], ["description", "This is the review number 12"], ["score", 5], ["created_at", "2021-03-25 18:38:11.383137"], ["updated_at", "2021-03-25 18:38:11.383137"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 13"], ["restaurant_id", 9], ["description", "This is the review number 13"], ["score", 4], ["created_at", "2021-03-25 18:38:11.390425"], ["updated_at", "2021-03-25 18:38:11.390425"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 14"], ["restaurant_id", 11], ["description", "This is the review number 14"], ["score", 1], ["created_at", "2021-03-25 18:38:11.397478"], ["updated_at", "2021-03-25 18:38:11.397478"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 15"], ["restaurant_id", 8], ["description", "This is the review number 15"], ["score", 3], ["created_at", "2021-03-25 18:38:11.403119"], ["updated_at", "2021-03-25 18:38:11.403119"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 16"], ["restaurant_id", 6], ["description", "This is the review number 16"], ["score", 2], ["created_at", "2021-03-25 18:38:11.409194"], ["updated_at", "2021-03-25 18:38:11.409194"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 17"], ["restaurant_id", 5], ["description", "This is the review number 17"], ["score", 4], ["created_at", "2021-03-25 18:38:11.415699"], ["updated_at", "2021-03-25 18:38:11.415699"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 18"], ["restaurant_id", 10], ["description", "This is the review number 18"], ["score", 1], ["created_at", "2021-03-25 18:38:11.421745"], ["updated_at", "2021-03-25 18:38:11.421745"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 19"], ["restaurant_id", 7], ["description", "This is the review number 19"], ["score", 2], ["created_at", "2021-03-25 18:38:11.427355"], ["updated_at", "2021-03-25 18:38:11.427355"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 20"], ["restaurant_id", 7], ["description", "This is the review number 20"], ["score", 4], ["created_at", "2021-03-25 18:38:11.434506"], ["updated_at", "2021-03-25 18:38:11.434506"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 21"], ["restaurant_id", 12], ["description", "This is the review number 21"], ["score", 1], ["created_at", "2021-03-25 18:38:11.441427"], ["updated_at", "2021-03-25 18:38:11.441427"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 22"], ["restaurant_id", 7], ["description", "This is the review number 22"], ["score", 3], ["created_at", "2021-03-25 18:38:11.447514"], ["updated_at", "2021-03-25 18:38:11.447514"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 23"], ["restaurant_id", 1], ["description", "This is the review number 23"], ["score", 1], ["created_at", "2021-03-25 18:38:11.453593"], ["updated_at", "2021-03-25 18:38:11.453593"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("user_name", "restaurant_id", "description", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "User 24"], ["restaurant_id", 9], ["description", "This is the review number 24"], ["score", 3], ["created_at", "2021-03-25 18:38:11.460108"], ["updated_at", "2021-03-25 18:38:11.460108"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/restaurants" for ::1 at 2021-03-25 13:38:18 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"restaurants"}
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 205)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 18017)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.0ms | Allocations: 20448)
+
+
+Started GET "/api/v1/restaurants.json" for ::1 at 2021-03-25 13:38:19 -0500
+Processing by Api::V1::RestaurantsController#index as JSON
+  [1m[36mRestaurant Load (2.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (2.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 6]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 6]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 6]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 6]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 7]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 7]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 8]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 8]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 8]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 8]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 9]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 9]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 9]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 9]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 10]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 10]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 10]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 10]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 11]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 11]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 11]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 11]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 12]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 12]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 12]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 12]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+Completed 200 OK in 191ms (Views: 0.1ms | ActiveRecord: 71.8ms | Allocations: 56841)
+
+
+Started GET "/api/v1/restaurants.json" for ::1 at 2021-03-25 13:38:19 -0500
+Processing by Api::V1::RestaurantsController#index as JSON
+  [1m[36mRestaurant Load (0.8ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 6]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 6]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 6]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 6]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 7]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 7]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 8]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 8]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 8]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 8]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 9]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 9]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 9]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 9]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 10]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 10]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 10]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 10]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 11]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 11]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 11]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 11]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 12]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 12]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 12]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 12]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+Completed 200 OK in 111ms (Views: 0.1ms | ActiveRecord: 44.0ms | Allocations: 40583)
+
+
+Started GET "/api/v1/restaurants/restaurant-1" for ::1 at 2021-03-25 13:38:28 -0500
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"url"=>"restaurant-1"}
+  [1m[36mRestaurant Load (1.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."url" = $1 LIMIT $2[0m  [["url", "restaurant-1"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:24:in `show'
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/restaurant.rb:14:in `score'
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/restaurant.rb:16:in `score'
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+  [1m[36mReview Load (2.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `serialized_options'
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 9.8ms | Allocations: 4938)
+
+

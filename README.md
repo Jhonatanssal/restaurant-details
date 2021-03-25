@@ -21,34 +21,35 @@ To get a local copy up and running follow these simple example steps:
 - Go to https://github.com/jssarrazolaa/restaurant-details and clone the repo using: <br>
 `git clone https://github.com/jssarrazolaa/Twitter-RoR.git` in your terminal.
 
-### Setup
+### Setup (type all of the below commands in your terminal)
 
-Instal gems with:
+#### Instal gems with:
 
 ```
 bundle install
-```
-
-Setup database with:
-
-```
-   rails db:create
-   rails db:migrate
 ```
 
 Setup npm with:
 ```
   npm install
 ```
+#### Setup database with:
+
+```
+   rails db:create
+   rails db:migrate
+   rails db:seed
+```
+##### In that order! ↑↑↑
 ### Usage
 
-Start server with:
+#### Start server with:
 
 ```
     rails server
 ```
 
-Open `http://localhost:3000/` in your browser.
+Open `http://localhost:3000/` in your browser, start rating restaurants, and add restaurants as well.
 
 ## Author
 
