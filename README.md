@@ -1,24 +1,61 @@
-# README
+# Restaurant Details
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Built With
 
-Things you may want to cover:
+- Ruby v2.7.2
+- Ruby on Rails v6.1.3
+- React.js
 
-* Ruby version
+### Prerequisites
 
-* System dependencies
+- Ruby: 2.7.2
+- Rails: 6.1.3
+- Postgres: >=9.5
+- Node.js
+- React.js
 
-* Configuration
+## Getting Started
 
-* Database creation
+To get a local copy up and running follow these simple example steps:
 
-* Database initialization
+- Go to https://github.com/jssarrazolaa/restaurant-details and clone the repo using: <br>
+`git clone https://github.com/jssarrazolaa/Twitter-RoR.git` in your terminal.
 
-* How to run the test suite
+### Setup
 
-* Services (job queues, cache servers, search engines, etc.)
+Instal gems with:
 
-* Deployment instructions
+```
+bundle install
+```
 
-* ...
+Setup database with:
+
+```
+   rails db:create
+   rails db:migrate
+```
+
+Setup npm with:
+```
+  npm install
+```
+### Usage
+
+Start server with:
+
+```
+    rails server
+```
+
+Open `http://localhost:3000/` in your browser.
+
+## Author
+
+👤 **Jhonatan Sarrazola**
+- Github: [@jssarrazolaa](https://github.com/jssarrazolaa)
+- Twitter: [@StevenAlvarez_](https://twitter.com/StevenAlvarez_)
+- Linkedin: [Jhonatan Sarrazola](https://www.linkedin.com/in/jhonatan-sarrazola-6a46a01a5/)
+
+
+
